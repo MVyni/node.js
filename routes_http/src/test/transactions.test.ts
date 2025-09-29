@@ -36,14 +36,14 @@ describe('Transactions routes', () => {
                 amount: 2000,
                 type: 'credit'
             })
-        
+
         const cookies = createTransactionResponse.get('Set-Cookie')
 
         const listAllTransactionsResponse = await request(app.server)
             .get('/transactions')
             .set('Cookie', cookies)
             .expect(200)
-        
+
         expect(listAllTransactionsResponse.body.transactions).toEqual([
             expect.objectContaining({
                 title: 'New transaction',
@@ -67,7 +67,7 @@ describe('Transactions routes', () => {
             .get('/transactions')
             .set('Cookie', cookies)
             .expect(200)
-        
+
         const transactionId = listAllTransactionsResponse.body.transactions[0].id
 
         const getTransactionResponse = await request(app.server)
