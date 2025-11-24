@@ -12,7 +12,7 @@
     "types": [],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/@"]
+      "@/*": ["./src/*"]
     },
     // For nodejs:
     // "lib": ["esnext"],
