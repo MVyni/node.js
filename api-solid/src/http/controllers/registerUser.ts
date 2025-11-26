@@ -1,6 +1,6 @@
+import { registerUserService } from '@/services/registerUser.js'
 import type { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { prisma } from '@/lib/prisma.js'
 
 export async function registerUser(
   request: FastifyRequest,
@@ -15,17 +15,14 @@ export async function registerUser(
   const { name, email, password } = registerBodySchema.parse(request.body)
 
   try {
-    await prisma.user.create({
-      data: {
-        name,
-        email,
-        password_hash: password,
-      },
+    await registerUserService({
+      name,
+      email,
+      password,
     })
-
-    return reply.status(201).send()
   } catch (error) {
     console.error('Error on System ', error)
-    throw new Error()
+    return reply.status(409).send()
   }
+  return reply.status(201).send()
 }
