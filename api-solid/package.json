@@ -10,7 +10,8 @@
     "build": "tsup src --out-dir build",
     "eslint:fix": "eslint --ext .js,.ts src --fix",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@types/bcryptjs": "2.4.6",
     "@types/node": "24.10.1",
     "@types/pg": "8.15.6",
+    "@vitest/coverage-v8": "4.0.14",
     "prisma": "7.0.0",
     "tsup": "8.5.1",
     "tsx": "4.20.6",

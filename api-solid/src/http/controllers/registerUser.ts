@@ -1,5 +1,5 @@
 import { UserAlreadyExistError } from '@/services/errors/user-already-exist-error.js'
-import { PrismaUserRepository } from '@/repositories/prisma-users-repository.js'
+import { PrismaUserRepository } from '@/repositories/prisma/prisma-users-repository.js'
 import { RegisterUserService } from '@/services/registerUser.js'
 import type { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
