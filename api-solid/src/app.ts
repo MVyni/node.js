@@ -17,7 +17,6 @@ app.setErrorHandler((error, _, reply) => {
     } else {
         // Here we should log to on external tool like DataDog/NewRelic/Sentry
     }
-    
     return reply.status(500).send({ message: 'Internal server error'})
     
 })

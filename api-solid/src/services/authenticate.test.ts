@@ -1,14 +1,19 @@
-import { expect, describe, it } from 'vitest'
+import { expect, describe, it, beforeEach } from 'vitest'
 import { hash } from 'bcryptjs'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository.js'
 import { AuthenticateService } from './authenticate.js'
 import { InvalidCredentialsError } from './errors/invalid-credentials-error.js'
 
+let usersRepository: InMemoryUsersRepository
+let sut: AuthenticateService
+
 describe('Authenticate Service', async () => {
+    beforeEach(() => {
+        usersRepository = new InMemoryUsersRepository()
+        sut = new AuthenticateService(usersRepository) //SUT => System Under Test => The principal variable
+    })
 
     it('should be able to authenticate', async () => {
-        const usersRepository = new InMemoryUsersRepository()
-        const sut = new AuthenticateService(usersRepository) //SUT => System Under Test => The principal variable
 
         await usersRepository.create({
             name: 'Dominic Ferreira',
