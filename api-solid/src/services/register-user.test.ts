@@ -1,5 +1,5 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { RegisterUserService } from './registerUser.js'
+import { RegisterUserService } from './register-user.js'
 import { compare } from 'bcryptjs'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository.js'
 import { UserAlreadyExistError } from './errors/user-already-exist-error.js'
