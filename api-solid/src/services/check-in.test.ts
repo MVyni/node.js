@@ -25,7 +25,7 @@ describe('Check-ins Service', async () => {
             longitude: -49.6401091,
         })
 
-        vi.isFakeTimers()
+        vi.useFakeTimers()
     })
 
     afterEach(() => {
