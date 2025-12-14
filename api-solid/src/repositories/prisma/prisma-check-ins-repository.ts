@@ -2,7 +2,6 @@ import type { CheckIn } from "@/generated/prisma/client.js";
 import type { CheckInUncheckedCreateInput } from "@/generated/prisma/models.js";
 import type { CheckInsRepository } from "../check-ins-repository.js";
 import { prisma } from "@/lib/prisma.js";
-import { check } from "zod";
 import dayjs from "dayjs";
 
 export class PrismaCheckInsRepository implements CheckInsRepository {

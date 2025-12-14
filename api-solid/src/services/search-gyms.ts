@@ -18,7 +18,7 @@ export class SearchGymsService {
         page,
 }: SearchGymsServiceRequest): Promise<SearchGymsServiceResponse> {
 
-    const gym = await this.gymsRepository.search(query, page)
+    const gym = await this.gymsRepository.searchMany(query, page)
 
     return { gym }
   }
