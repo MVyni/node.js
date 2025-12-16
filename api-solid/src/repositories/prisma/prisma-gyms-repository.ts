@@ -5,7 +5,7 @@ import type { Gym } from "@/generated/prisma/client.js";
 
 export class PrismaGymsRepository implements GymsRepository {
     async findById(id: string) {
-        const gym = await prisma.checkIn.findUnique({
+        const gym = await prisma.gym.findUnique({
             where: {
                 id,
             },

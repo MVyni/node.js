@@ -1,7 +1,7 @@
 import { UserAlreadyExistError } from '@/services/errors/user-already-exist-error.js'
 import type { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { makeRegisterService } from '@/services/factories/make-register-service.js'
+import { makeRegisterUserService } from '@/services/factories/make-register-user-service.js'
 
 export async function registerUser(
   request: FastifyRequest,
@@ -16,7 +16,7 @@ export async function registerUser(
   const { name, email, password } = registerBodySchema.parse(request.body)
 
   try {
-    const registerUserService = makeRegisterService()
+    const registerUserService = makeRegisterUserService()
 
     await registerUserService.execute({
       name,
