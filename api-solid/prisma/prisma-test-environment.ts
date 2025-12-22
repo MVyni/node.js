@@ -18,7 +18,7 @@ function generateDateBaseUrl(schema: string) {
 
 export default <Environment>{
     name: 'prisma',
-    transformMode: 'ssr',
+    viteEnvironment: 'ssr',
     async setup() {
     // CREATE DATABASE TESTS
 
@@ -26,8 +26,6 @@ export default <Environment>{
         const databaseUrl = generateDateBaseUrl(schema)
 
         process.env.DATABASE_URL = databaseUrl
-
-        execSync('npx prisma db push')
 
         return {
             async teardown() {
