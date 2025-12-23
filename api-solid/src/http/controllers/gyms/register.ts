@@ -2,7 +2,7 @@ import type { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 import { makeRegisterGymService } from '@/services/factories/make-register-gym-service.js'
 
-export async function registerGym(
+export async function register(
     request: FastifyRequest,
     reply: FastifyReply,
 ) {
