@@ -1,5 +1,5 @@
 import type { FastifyInstance } from 'fastify'
-import { registerUser } from './register-user.js'
+import { registerUser } from './register.js'
 import { authenticate } from './authenticate.js'
 import { profile } from './profile.js'
 import { verifyJwt } from '@/http/middlewares/verify-jwt.js'
